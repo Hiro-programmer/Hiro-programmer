@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>フリマ価格比較ツール</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">
+        <span class="icon">🛒</span> フリマ価格比較ツール
+      </h1>
+      <p class="site-desc">メルカリ・ラクマ・Yahoo!フリマを一括検索</p>
+    </div>
+  </header>
+
+  <!-- ===== SEARCH ===== -->
+  <section class="search-section">
+    <div class="container">
+      <form id="searchForm" class="search-form" autocomplete="off">
+        <input
+          id="searchInput"
+          type="text"
+          class="search-input"
+          placeholder="商品名を入力（例：iPhone 15、Nintendo Switch）"
+          maxlength="100"
+          required
+        />
+        <button type="submit" class="search-btn" id="searchBtn">
+          <span class="btn-text">検索</span>
+          <span class="btn-spinner" hidden>...</span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== STATUS / ERROR ===== -->
+  <div id="statusMsg" class="container status-msg" hidden></div>
+
+  <!-- ===== SUMMARY CARDS ===== -->
+  <section id="summarySection" class="container summary-section" hidden>
+    <h2 class="section-title">📊 価格サマリー</h2>
+    <div id="summaryCards" class="summary-grid"></div>
+  </section>
+
+  <!-- ===== RESULTS ===== -->
+  <section id="resultsSection" class="container results-section" hidden>
+
+    <!-- Controls -->
+    <div class="results-controls">
+      <h2 class="section-title">🔍 検索結果</h2>
+      <div class="controls-right">
+        <label for="filterPlatform" class="ctrl-label">プラットフォーム:</label>
+        <select id="filterPlatform" class="ctrl-select">
+          <option value="all">すべて</option>
+          <option value="mercari">メルカリ</option>
+          <option value="rakuma">ラクマ</option>
+          <option value="yahoo_flea">Yahoo!フリマ</option>
+        </select>
+
+        <label for="sortOrder" class="ctrl-label">並び替え:</label>
+        <select id="sortOrder" class="ctrl-select">
+          <option value="price_asc">価格が安い順</option>
+          <option value="price_desc">価格が高い順</option>
+          <option value="platform">プラットフォーム別</option>
+        </select>
+      </div>
+    </div>
+
+    <div id="resultCount" class="result-count"></div>
+    <div id="itemGrid" class="item-grid"></div>
+  </section>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
