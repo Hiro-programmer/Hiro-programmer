@@ -14,8 +14,8 @@ if errorlevel 1 (
     exit /b 1
 )
 
-echo [1/3] PyInstaller をインストール中...
-pip install pyinstaller --quiet
+echo [1/3] 必要ライブラリをインストール中...
+pip install pyinstaller matplotlib --quiet
 if errorlevel 1 (
     echo [エラー] PyInstaller のインストールに失敗しました。
     pause

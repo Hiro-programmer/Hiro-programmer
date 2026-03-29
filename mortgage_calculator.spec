@@ -5,7 +5,11 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=[],
-    hiddenimports=['tkinter', 'tkinter.ttk', 'tkinter.messagebox'],
+    hiddenimports=[
+        'tkinter', 'tkinter.ttk', 'tkinter.messagebox', 'tkinter.filedialog',
+        'matplotlib', 'matplotlib.backends.backend_tkagg',
+        'matplotlib.pyplot', 'matplotlib.ticker',
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],
