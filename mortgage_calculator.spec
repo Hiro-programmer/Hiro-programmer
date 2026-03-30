@@ -9,6 +9,7 @@ a = Analysis(
         'tkinter', 'tkinter.ttk', 'tkinter.messagebox', 'tkinter.filedialog',
         'matplotlib', 'matplotlib.backends.backend_tkagg',
         'matplotlib.pyplot', 'matplotlib.ticker',
+        'ttkbootstrap', 'ttkbootstrap.constants', 'PIL', 'PIL.Image',
     ],
     hookspath=[],
     hooksconfig={},
